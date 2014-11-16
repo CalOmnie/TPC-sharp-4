@@ -9,7 +9,6 @@ namespace TP_C_sharp_Array_Ref
 {
     class Program
     {
-        /*
         static void add(ref float result, float value)
         {
             result += value;
@@ -155,24 +154,6 @@ namespace TP_C_sharp_Array_Ref
             else
                 Console.WriteLine("YOU LOOSE NOOB");
             Console.Read();
-        }
-         */
-        static int fact(int n, ref int res)
-        {
-            res = 1;
-            for (int i = 2; i <= n; i++)
-                res *= i;
-            return res;
-        }
-
-        static int Main(string[] args)
-        {
-            int res = 0;
-            Console.WriteLine(res);
-            Console.WriteLine(fact(4, ref res) + ", " + res);
-            Console.WriteLine(fact(2, ref res) + ", " + res);
-            Console.Read();
-            return 0;
         }
     }
 }
