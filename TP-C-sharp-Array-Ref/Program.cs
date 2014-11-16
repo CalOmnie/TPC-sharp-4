@@ -9,6 +9,53 @@ namespace TP_C_sharp_Array_Ref
 {
     class Program
     {
+        /*
+        static void add(ref float result, float value)
+        {
+            result += value;
+        }
+
+        static void sub(ref float result, float value)
+        {
+            result -= value;
+        }
+
+        static void prod(ref float result, float value)
+        {
+            result *= value;
+        }
+
+        static int div(ref float result, float value)
+        {
+            if (value == 0)
+                return 1;
+            result /= value;
+            return 0;
+        }
+
+        static bool pow(ref float n, int m)
+        {
+            if (m < 0 || m == n && m == 0)
+                return false;
+            float or = n;
+            for (int i = 0; i < m; i++)
+                n *= or;
+            return true;
+        }
+
+        static bool arit(ref float Un, float r, int n)
+        {
+            add(ref Un, r * n);
+            return true;
+        }
+
+        static bool geom(ref float Un, float q, int n)
+        {
+            bool res = pow(ref q, n);
+            prod(ref Un, q);
+            return res;
+        }
+
         static int width = 3;
         static void swap(ref int a, ref int b)
         {
@@ -82,7 +129,7 @@ namespace TP_C_sharp_Array_Ref
             where++;
             return sol;
         }
-
+        
         static void Main(string[] args)
         {
             int[][] race = string_of_int_array("000000000000110000000011000000000", width);
@@ -108,6 +155,24 @@ namespace TP_C_sharp_Array_Ref
             else
                 Console.WriteLine("YOU LOOSE NOOB");
             Console.Read();
+        }
+         */
+        static int fact(int n, ref int res)
+        {
+            res = 1;
+            for (int i = 2; i <= n; i++)
+                res *= i;
+            return res;
+        }
+
+        static int Main(string[] args)
+        {
+            int res = 0;
+            Console.WriteLine(res);
+            Console.WriteLine(fact(4, ref res) + ", " + res);
+            Console.WriteLine(fact(2, ref res) + ", " + res);
+            Console.Read();
+            return 0;
         }
     }
 }
