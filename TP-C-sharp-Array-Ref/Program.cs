@@ -55,7 +55,7 @@ namespace TP_C_sharp_Array_Ref
             return res;
         }
 
-        static int width = 3;
+
         static void swap(ref int a, ref int b)
         {
             int temp = a;
@@ -63,6 +63,53 @@ namespace TP_C_sharp_Array_Ref
             b = temp;
         }
 
+        static int mintab(int[] tab, ref int min)
+        {
+            if (tab.Length == 0)
+                return -1;
+            int pos = 0;
+            min = tab[0];
+            for (int i = 1; i < tab.Length; ++i)
+            {
+                if (tab[i] < min)
+                {
+                    min = tab[i];
+                    pos = i;
+                }
+            }
+            return pos;
+        }
+
+        static int maxtab(int[] tab, ref int max)
+        {
+            if (tab.Length == 0)
+                return -1;
+            int pos = 0;
+            max = tab[0];
+            for (int i = 1; i < tab.Length; ++i)
+            {
+                if (tab[i] > max)
+                {
+                    max = tab[i];
+                    pos = i;
+                }
+            }
+            return pos;
+        }
+
+        static void bubblesort(int[] tab)
+        {
+            for (int i = 1; i < tab.Length; ++i)
+            {
+                if (i > 0 && tab[i] < tab[i - 1])
+                {
+                    swap(ref tab[i], ref tab[i - 1]);
+                    i -= 2;
+                }
+            }
+        }
+
+        static int width = 3;
         static int[][] string_of_int_array(string a, int width)
         {
             int[][] sol = new int[a.Length / width][];
@@ -155,5 +202,7 @@ namespace TP_C_sharp_Array_Ref
                 Console.WriteLine("YOU LOOSE NOOB");
             Console.Read();
         }
+         
+
     }
 }
